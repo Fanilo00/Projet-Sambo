@@ -45,9 +45,3 @@ create table Reparation
     foreign key (ID_Bateau) references quai(ID_Bateau)
 );
 
-create table Prevision
-(
-    ID_Prevision serial primary key,
-    ID_Bateau INT,
-
-);
