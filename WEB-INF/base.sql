@@ -17,11 +17,13 @@ create table prestation (
     ID_Prestation serial primary key,
     ID_Quai INT,
     ID_Bateau INT,
-    Remorquage 
+    Remorquage INT,
+    Stationnement INT,
     foreign key (ID_Quai) references quai(ID_Quai),
     foreign key (ID_Bateau) references quai(ID_Bateau)
 
 );
+/*Remorquage = prix par quai*/
 
 create table categorie_Bateau (
     ID_Categorie serial primary key,
@@ -33,21 +35,6 @@ create table Pavillon (
     ID_Pavillon serial primary key,
     Pavillon VARCHAR (25),
     Prix_Pavillon INT
-);
-
-create table Stationnement (
-    ID_Station serial primary key,
-    ID_Quai INT,
-    Prix_par_quai INT
-    foreign key (ID_Quai) references quai(ID_Quai),
-);
-
-create table Remorquage 
-(
-    ID_Remorquage serial primary key,
-    ID_Quai INT,
-    Prix_par_quai INT
-    foreign key (ID_Quai) references quai(ID_Quai),
 );
 
 create table Reparation 
