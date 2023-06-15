@@ -34,9 +34,9 @@ public class Prevision
         this.date_fin = date_fin;
     }
 
-    public void InsertPrevision()
+    public void InsertPrevision(Prevision prevision, Connection con)
     {
-        c
+        
     }
     
     
