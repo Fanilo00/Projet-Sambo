@@ -1,10 +1,8 @@
 public class Proposition {
-    package
 
     int ID_Proposition;
     Prevision prevision;
     int ID_Quai;
-
 
     public int getID_Proposition() {
         return ID_Proposition;

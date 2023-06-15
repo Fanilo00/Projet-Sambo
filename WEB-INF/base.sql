@@ -1,22 +1,28 @@
+create user sambo identified by sambo;
+grant dba to sambo;
+connect sambo/sambo;
 
 
+create sequence seq_categorie start with 1 increment by 1 ;
 create table categorie_Bateau (
-    ID_Categorie serial ,
+    ID_Categorie int,
     Categorie VARCHAR (25),
     Prix_Categorie INT,
-    PRIMARY KEY (ID_Categorie, Categorie)
+    PRIMARY KEY (ID_Categorie,Categorie)
 );
 
-insert into categorie_Bateau values(default,'Peche',2000);
-insert into categorie_Bateau values(default,'Marchandises',3000);
-insert into categorie_Bateau values(default,'Petrolier',25000);
-insert into categorie_Bateau values(default,'Paquebot',1000);
+insert into categorie_Bateau values(seq_categorie.nextVal,'Peche',2000);
+insert into categorie_Bateau values(seq_categorie.nextVal,'Marchandises',3000);
+insert into categorie_Bateau values(seq_categorie.nextVal,'Petrolier',25000);
+insert into categorie_Bateau values(seq_categorie.nextVal,'Paquebot',1000);
 
 ALTER TABLE categorie_Bateau ADD CONSTRAINT pk_categorie UNIQUE (Categorie);
 
+
+create sequence seq_bateau start with 1 increment by 1 ;
 create table bateau 
 (
-    ID_Bateau serial primary key,
+    ID_Bateau int primary key,
     Nom_Bateau varchar(50),
     Categorie VARCHAR (25),
     Pavillon INT,
@@ -24,6 +30,7 @@ create table bateau
     foreign key (Categorie) references categorie_Bateau(Categorie)
 );
 
+create sequence seq_prevision start with 1 increment by 1 ;
 create table prevision
 (
     ID_Prevision INT primary key,
@@ -33,18 +40,20 @@ create table prevision
     foreign key(ID_Bateau) references bateau(ID_bateau)
 );
 
-
+create sequence seq_quai start with 1 increment by 1 ;
 
 create table quai (
-    ID_Quai serial primary key,
+    ID_Quai int primary key,
     Profondeur DECIMAL(10,2)
 );
 
-ALTER TABLE prevision ADD CONSTRAINT uc_prevision UNIQUE (ID_Prevision);
+
+
+create sequence seq_proposition start with 1 increment by 1 ;
 
 create table proposition
 (
-    ID_Proposition serial primary key,
+    ID_Proposition int primary key,
     ID_Prevision int,
     ID_Quai int,
     foreign key(ID_Prevision) references Prevision(ID_Prevision)

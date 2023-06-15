@@ -1,13 +1,15 @@
 package sambo;
 
-public class Bateau {
+public class Bateau 
+{
     int ID_Bateau;
     String categorie;
     int Pavillon;
     int Nom_Bateau;
     double profondeur;
     
-    public void setID_Bateau(int iD_Bateau) {
+    public void setID_Bateau(int iD_Bateau) 
+    {
         ID_Bateau = iD_Bateau;
     }
     public void setCategorie(String categorie) {
