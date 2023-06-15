@@ -2,8 +2,12 @@ package conn;
 
 import java.sql.*;
 
-public class Connexion 
+public class Connect
 {
+    public Connect()
+	{
+		
+	}
 	public Connection connex() throws Exception 
 	{
 		Class.forName("oracle.jdbc.driver.OracleDriver");
@@ -11,10 +15,7 @@ public class Connexion
 		return conn;
 
 	}
-	public Connexion()
-	{
-		
-	}
+	
 
 }
 

@@ -1,18 +1,17 @@
 package main;
 
 import java.sql.Connection;
-import connex.*; 
+import conn.*; 
 
 public class Main {
-    public static void main(String[] args) {
-        Connect dbConnection = new Connect();
-        Connection connection = dbConnection.connect();
-        
-        
+    public static void main(String[] args){
+      
+
         try {
-            connection.close();
+              Connect dbConnection = new Connect();
+        Connection connection = dbConnection.connex();
         } catch (Exception e) {
-            e.printStackTrace();
         }
+        
     }
 }
