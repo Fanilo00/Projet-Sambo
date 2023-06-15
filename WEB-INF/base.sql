@@ -7,6 +7,11 @@ create table categorie_Bateau (
     PRIMARY KEY (ID_Categorie, Categorie)
 );
 
+insert into categorie_Bateau values(default,'Peche',2000);
+insert into categorie_Bateau values(default,'Marchandises',3000);
+insert into categorie_Bateau values(default,'Petrolier',25000);
+insert into categorie_Bateau values(default,'Paquebot',1000);
+
 ALTER TABLE categorie_Bateau ADD CONSTRAINT pk_categorie UNIQUE (Categorie);
 
 create table bateau 

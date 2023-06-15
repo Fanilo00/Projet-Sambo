@@ -1,3 +1,5 @@
+package sambo;
+
 public class Pavillon {
     int ID_Pavillon;
     String Pavillon;
@@ -28,5 +30,6 @@ public class Pavillon {
         Prix_Pavillon = prix_Pavillon;
     }
 
+    
     
 }

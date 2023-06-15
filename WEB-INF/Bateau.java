@@ -1,3 +1,5 @@
+package sambo;
+
 public class Bateau {
     int ID_Bateau;
     String categorie;

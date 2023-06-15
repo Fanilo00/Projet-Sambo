@@ -1,3 +1,5 @@
+package port;
+
 import java.sql.Date;
 
 public class Prevision 
@@ -31,6 +33,8 @@ public class Prevision
     public void setDate_fin(Date date_fin) {
         this.date_fin = date_fin;
     }
+
+
     
     
 }

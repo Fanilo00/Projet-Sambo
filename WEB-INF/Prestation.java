@@ -9,6 +9,7 @@ public class Prestation {
     public void setID_Prestation(int iD_Prestation) {
         ID_Prestation = iD_Prestation;
     }
+package port;
 
     public int getID_Prestation() {
         return ID_Prestation;
