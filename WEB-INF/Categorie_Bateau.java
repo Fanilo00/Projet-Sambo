@@ -1,3 +1,5 @@
+package sambo;
+
 public class Categorie_Bateau
 {
 
