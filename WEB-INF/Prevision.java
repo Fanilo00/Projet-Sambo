@@ -1,6 +1,10 @@
 package port;
+import connex.*;
 
+import java.sql.Connection;
 import java.sql.Date;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 public class Prevision 
 {
@@ -34,10 +38,73 @@ public class Prevision
         this.date_fin = date_fin;
     }
 
-    public void InsertPrevision(Prevision prevision, Connection con)
+    public void InsertPrevision(Prevision prevision, Connection conn)
     {
+        Connect c = new Connect();
+        String sql = "INSERT INTO Prevision VALUES (?,?,?,?)";
+        try (PreparedStatement stmnt = conn.prepareStatement(sql)){
+            
+        stmnt.setInt(1, prevision.getID_Prevision());
+        stmnt.setInt(2, prevision.getID_Bateau());
+        stmnt.setDate(3, prevision.getDate_debut());
+        stmnt.setDate(4, prevision.getDate_fin());
+
+        stmnt.executeUpdate();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         
     }
-    
+    public void GetIDPrevision(Prevision prevision, Connection conn)
+    {
+        Connect c = new Connect();
+        String query = "SELECT * FROM Prevision WHERE ID_Prevision = ?";
+        try (PreparedStatement stmnt = conn.prepareStatement(query)){
+            stmnt.setInt(1, ID_Prevision);
+        ResultSet rs = stmnt.executeQuery();
+
+        while (rs.next()) {
+            int id = rs.getInt("ID_Prevision");
+            int idBateau = rs.getInt("ID_Bateau");
+            Date debut = rs.getDate("date_debut");
+            Date fin = rs.getDate("date_fin");
+
+            rs.close();
+            stmnt.close();
+            conn.close();
+        }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        
+    }
+    public void GetPrevision(Prevision prevision, Connection conn)
+    {
+        Connect c = new Connect();
+        String query = "SELECT * FROM Prevision";
+        try (PreparedStatement stmnt = conn.prepareStatement(query)){
+            stmnt.setInt(1, ID_Prevision);
+            stmnt.setInt(2, ID_Bateau);
+            stmnt.setDate(3, date_debut);
+            stmnt.setDate(4, date_fin);
+
+        ResultSet rs = stmnt.executeQuery();
+
+        while (rs.next()) {
+            int id = rs.getInt("ID_Prevision");
+            int idBateau = rs.getInt("ID_Bateau");
+            Date debut = rs.getDate("date_debut");
+            Date fin = rs.getDate("date_fin");
+
+            rs.close();
+            stmnt.close();
+            conn.close();
+        }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        
+    }
     
 }

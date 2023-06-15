@@ -2,6 +2,7 @@ package connex;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class Connect {
@@ -16,6 +17,10 @@ public class Connect {
         }
 
         return conn;
+    }
+
+    public PreparedStatement prepareStatement(String string) {
+        return null;
     }
 }
 
