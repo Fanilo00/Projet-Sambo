@@ -36,7 +36,7 @@ public class Prevision
 
     public void InsertPrevision()
     {
-        c
+        
     }
     
     
