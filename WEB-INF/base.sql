@@ -1,6 +1,6 @@
 create user sambo identified by sambo;
-grant dba to sambo;
-connect sambo/sambo;
+    grant dba to sambo;
+    connect sambo/sambo;
 
 
 create sequence seq_categorie start with 1 increment by 1 ;
