@@ -5,6 +5,7 @@ create table bateau
     ID_Bateau serial primary key,
     Categorie VARCHAR (25),
     Pavillon INT,
+    Profondeur INT,
     foreign key (Categorie) references categorie_bateau(Categorie)
 );
 

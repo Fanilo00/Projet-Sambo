@@ -6,6 +6,7 @@
     <title>Ajouter une catégorie de bateau</title>
 </head>
 <body>
+    <form action="Resultat.jsp" method="post">
         <select name="categorie" id="categorie">
             <option value="#">Categorie de bateau</option>
             <option value="#">Marchandise</option>

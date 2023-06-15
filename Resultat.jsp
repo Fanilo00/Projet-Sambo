@@ -3,23 +3,20 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Ajouter une catégorie de bateau</title>
 </head>
 <body>
-        <select name="categorie" id="categorie">
-            <option value="#">Categorie de bateau</option>
-            <option value="#">Marchandise</option>
-            <option value="#">Peche</option>
-            <option value="#">Pacquebot</option>
-        </select>
-            <input type="date" name="datedebut" id="datedebut" placeholder="Date debut">
-            <input type="date" name="datefin" id="datefin" placeholder="Date fin">
-        <select name="pavillon" id="pavillon">
-            <option value="#">Pavillon</option>
-            <option value="#">National</option>
-            <option value="#">International</option>
-        </select>
-        <button type="submit">Valider</button>
-    </form>
+        <form action="" method="post">
+            <label for="quai">Quai N°003</label>
+            <table border="1">
+                <tr>
+                    <td>Categorie</td>
+                    <td>Date</td>
+                    <td>Remorquage</td>
+                    <td>Categorie</td>
+                    <td>Par quai</td>
+                    <td>Bateau</td>
+                </tr>
+            </table>
+        </form>
 </body>
 </html>
