@@ -15,13 +15,8 @@ create table bateau
     Nom_Bateau varchar(50),
     Categorie VARCHAR (25),
     Pavillon INT,
-<<<<<<< Updated upstream
-    Profondeur INT,
-    foreign key (Categorie) references categorie_bateau(Categorie)
-=======
     Profondeur DECIMAL(10,2),
     foreign key (Categorie) references categorie_Bateau(Categorie)
->>>>>>> Stashed changes
 );
 
 create table prevision
