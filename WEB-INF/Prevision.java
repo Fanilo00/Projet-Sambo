@@ -34,7 +34,10 @@ public class Prevision
         this.date_fin = date_fin;
     }
 
-
+    public void InsertPrevision()
+    {
+        c
+    }
     
     
 }
